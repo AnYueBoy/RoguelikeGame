@@ -11,6 +11,7 @@ public class InteractiveBoard : BaseUI
 
     private void Update()
     {
+        MobileInput();
     }
 
     #region 移动端移动逻辑

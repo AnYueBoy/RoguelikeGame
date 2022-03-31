@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UFramework.Core;
+using UFramework.Tween;
 using UnityEngine;
 
 public class CustomProviderBootstrap : IBootstrap
 {
     public void Bootstrap()
     {
-        IServiceProvider[] providerArray = new IServiceProvider[]
-        {
+        IServiceProvider[] providerArray = {
         };
 
         foreach (IServiceProvider provider in providerArray)
