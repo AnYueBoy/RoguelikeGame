@@ -4,4 +4,6 @@ using UnityEngine;
 
 public class TransformManager : MonoBehaviour
 {
+    [SerializeField] private RectTransform canvasTrans;
+    public RectTransform CanvasTrans => canvasTrans;
 }
