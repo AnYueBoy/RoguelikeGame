@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasTrans: {fileID: 365271581}
+  uiCamera: {fileID: 1020222518}
 --- !u!114 &453888110
 MonoBehaviour:
   m_ObjectHideFlags: 0

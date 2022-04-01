@@ -5,11 +5,24 @@
  * @Last Modified by: l hy
  * @Last Modified time: 2020-12-21 16:42:57
  */
-namespace UFramework.GameCommon {
+
+using System;
+
+namespace UFramework.GameCommon
+{
     using UnityEngine;
 
-    public class BaseUI : MonoBehaviour {
+    public class BaseUI : MonoBehaviour
+    {
+        protected RectTransform rectTransform;
 
-        public virtual void OnShow (params object[] args) { }
+        public void OnEnable()
+        {
+            rectTransform = GetComponent<RectTransform>();
+        }
+
+        public virtual void OnShow(params object[] args)
+        {
+        }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class InteractiveBoard : BaseUI
 {
     [SerializeField] private RectTransform rockerTrans;
+
     public override void OnShow(params object[] args)
     {
     }
@@ -29,7 +30,7 @@ public class InteractiveBoard : BaseUI
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvasTrans,
             touch.position,
-            null,
+            App.Make<TransformManager>().UICamera,
             out Vector2 targetPos);
 
         // 对屏幕三分之一出的屏幕进行触摸响应
@@ -59,7 +60,7 @@ public class InteractiveBoard : BaseUI
 
     private void TouchStart(Vector2 touchPos)
     {
-        this.touchStartPos = touchPos;
+        touchStartPos = touchPos;
         rockerTrans.localPosition = touchPos;
     }
 
