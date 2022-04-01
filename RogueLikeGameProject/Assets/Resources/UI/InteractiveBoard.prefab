@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88db3efc51454b6b9fc44ce9b85aa731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rockerTrans: {fileID: 4312700486890333838}
 --- !u!1 &2783851836146884024
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class InteractiveBoard : BaseUI
 {
+    [SerializeField] private RectTransform rockerTrans;
     public override void OnShow(params object[] args)
     {
     }
@@ -58,6 +59,8 @@ public class InteractiveBoard : BaseUI
 
     private void TouchStart(Vector2 touchPos)
     {
+        this.touchStartPos = touchPos;
+        rockerTrans.localPosition = touchPos;
     }
 
     private void TouchMove(Vector2 touchPos)

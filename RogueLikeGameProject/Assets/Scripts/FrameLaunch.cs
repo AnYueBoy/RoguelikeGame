@@ -1,5 +1,6 @@
 using UFramework.Bootstarp;
 using UFramework.Core;
+using UFramework.GameCommon;
 using UFramework.Promise;
 using UFramework.Tween;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class FrameLaunch : MonoBehaviour
 
     void Start () {
         _application.Init ();
+        App.Make<IUIManager>().ShowBoard<InteractiveBoard>();
     }
 
     void Update () {
