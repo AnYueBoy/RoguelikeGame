@@ -8,7 +8,9 @@ public class CustomProviderBootstrap : IBootstrap
 {
     public void Bootstrap()
     {
-        IServiceProvider[] providerArray = {
+        IServiceProvider[] providerArray =
+        {
+            new ProvideInputManager()
         };
 
         foreach (IServiceProvider provider in providerArray)

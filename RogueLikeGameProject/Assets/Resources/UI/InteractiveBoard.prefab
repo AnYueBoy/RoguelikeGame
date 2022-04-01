@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockerTrans: {fileID: 4312700486890333838}
+  rockerJoyTrans: {fileID: 1901543972520305556}
 --- !u!1 &2783851836146884024
 GameObject:
   m_ObjectHideFlags: 0

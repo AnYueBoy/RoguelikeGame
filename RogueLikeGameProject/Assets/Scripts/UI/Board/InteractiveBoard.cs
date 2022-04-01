@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using UFramework.Core;
 using UFramework.GameCommon;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class InteractiveBoard : BaseUI
 {
     [SerializeField] private RectTransform rockerTrans;
+    [SerializeField] private RectTransform rockerJoyTrans;
 
     public override void OnShow(params object[] args)
     {
@@ -56,7 +58,7 @@ public class InteractiveBoard : BaseUI
         }
     }
 
-    private Vector2? touchStartPos = null;
+    private Vector2? touchStartPos;
 
     private void TouchStart(Vector2 touchPos)
     {
@@ -64,12 +66,34 @@ public class InteractiveBoard : BaseUI
         rockerTrans.localPosition = touchPos;
     }
 
+    private readonly float moveMaxDis = 100;
+
     private void TouchMove(Vector2 touchPos)
     {
+        if (touchStartPos == null)
+        {
+            return;
+        }
+
+        Vector2 moveVec = touchPos - touchStartPos.Value;
+        Vector2 moveDir = moveVec.normalized;
+        App.Make<InputManager>().setMoveDir(moveDir);
+
+        if (moveVec.magnitude > moveMaxDis)
+        {
+            rockerJoyTrans.localPosition = moveDir * moveMaxDis;
+        }
+        else
+        {
+            rockerJoyTrans.localPosition = moveVec;
+        }
     }
 
     private void TouchEnd()
     {
+        touchStartPos = null;
+        App.Make<InputManager>().setMoveDir(null);
+        rockerJoyTrans.localPosition = Vector2.zero;
     }
 
     #endregion
