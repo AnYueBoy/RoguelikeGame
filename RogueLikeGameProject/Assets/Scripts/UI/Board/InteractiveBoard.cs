@@ -36,7 +36,7 @@ public class InteractiveBoard : BaseUI
             out Vector2 targetPos);
 
         // 对屏幕三分之一出的屏幕进行触摸响应
-        if (touch.position.x > Screen.width / 3)
+        if (touch.position.x > Screen.width / 3 && touchStartPos == null)
         {
             TouchEnd();
             return;
